@@ -1,21 +1,9 @@
 {
-    "headers": [
-        {
-            "source": "/content.js",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "GET, OPTIONS"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "*"
-                }
-            ]
-        }
-    ]
+  "version": 2,
+  "builds": [
+    { "src": "api/contentAPI.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/content.js", "dest": "/api/contentAPI.js" }
+  ]
 }
