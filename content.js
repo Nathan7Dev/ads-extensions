@@ -1,16 +1,19 @@
-console.log('%cExtensão desenvolvida por Nathan - Sem fins de infringir a Habblet etiqueta.',
+console.log('%cExtensão desenvolvida por Nathan - Sem fins de infringir a Habblet etiqueta.', 
   'color: green; font-weight: bold; font-size: 14px;');
 
 const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
+// Verifica se elemento está visível
 function isVisible(elem) {
   return !!(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
 }
 
+// Verifica se elemento está dentro da barra de amigos
 function isInsideFriendBar(el) {
   return el.closest('.friend-bar-item') !== null;
 }
 
+// Fecha anúncios antigos
 function closeOldAd() {
   document.querySelectorAll('[id^="closeAd"] a').forEach(btn => {
     if (isInsideFriendBar(btn)) return;
@@ -21,6 +24,7 @@ function closeOldAd() {
   });
 }
 
+// Fecha anúncios novos (SVG com aria-label)
 function closeNewAd() {
   document.querySelectorAll('svg[aria-label*="fech"][role="button"]').forEach(el => {
     if (isInsideFriendBar(el)) return;
@@ -31,6 +35,7 @@ function closeNewAd() {
   });
 }
 
+// Remove iframes/divs do Google Ads
 function removeAdFrames() {
   document.querySelectorAll('div[id^="aswift_"], iframe[id^="aswift_"]').forEach(el => {
     if (isInsideFriendBar(el)) return;
@@ -41,6 +46,7 @@ function removeAdFrames() {
   });
 }
 
+// Exibe popup de créditos
 function showCreditsPopup() {
   if (document.querySelector('.draggable-window.credit-popup')) return;
 
@@ -91,6 +97,7 @@ function showCreditsPopup() {
   }, 10000);
 }
 
+// Execução controlada
 let isRunning = false;
 function removeAds() {
   if (isRunning) return;
@@ -103,6 +110,7 @@ function removeAds() {
   isRunning = false;
 }
 
+// MutationObserver com debounce
 let debounceTimeout;
 const debouncedRemoveAds = () => {
   clearTimeout(debounceTimeout);
@@ -112,5 +120,6 @@ const debouncedRemoveAds = () => {
 const observer = new MutationObserver(debouncedRemoveAds);
 observer.observe(document.body, { childList: true, subtree: true });
 
+// Execução inicial
 removeAds();
 showCreditsPopup();

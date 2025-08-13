@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "api/contentAPI.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/content.js", "dest": "/api/contentAPI.js" }
-  ]
-}
