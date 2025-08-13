@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "BletShield",
+  "name": "BletNinjaClose",
   "description": "Extensão que fecha anúncios e popups automaticamente, seguindo a Habblet Etiqueta para uma navegação mais limpa.",
   "version": "1.1",
-  "author": "Nathan Zera",
+  "author": "Nathan,",
   "host_permissions": [
     "*://habblet.city/hotel*",
     "*://www.habblet.city/hotel/*"
@@ -17,7 +17,7 @@
       "js": [
         "content.js"
       ],
-      "run_at": "document_start",
+      "run_at": "document_idle",
       "world": "MAIN"
     }
   ],
@@ -27,6 +27,6 @@
     "128": "sharingan_128.png"
   },
   "action": {
-    "default_title": "BletShield"
+    "default_title": "BletNinjaClose"
   }
 }
