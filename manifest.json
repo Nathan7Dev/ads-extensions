@@ -16,17 +16,9 @@
     "48": "sharingan_48.png",
     "128": "sharingan_128.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://www.habblet.city/*"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "run_at": "document_idle"
-    }
-  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_title": "Auto Close Blet"
   }
