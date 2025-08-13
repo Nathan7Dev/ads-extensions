@@ -1,21 +1,18 @@
 {
-    "headers": [
+    "routes": [
         {
-            "source": "/content.js",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "GET, OPTIONS"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "*"
-                }
-            ]
+            "src": "/content.js",
+            "methods": [
+                "GET",
+                "OPTIONS"
+            ],
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+                "Access-Control-Allow-Headers": "*"
+            },
+            "status": 200,
+            "dest": "/content.js"
         }
     ]
 }
