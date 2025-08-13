@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Close Blet",
+  "version": "1.0",
+  "description": "Fecha anúncios e popups do Habblet automaticamente",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://www.habblet.city/*"
+  ],
+  "icons": {
+    "16": "sharingan_16.png",
+    "48": "sharingan_48.png",
+    "128": "sharingan_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.habblet.city/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Auto Close Blet"
+  }
+}
