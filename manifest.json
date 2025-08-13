@@ -1,20 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "Auto Close Blet",
-  "version": "1.0",
-  "description": "Fecha anúncios e popups do Habblet automaticamente",
+  "name": "BletShield",
+  "description": "Extensão que fecha anúncios e popups automaticamente, seguindo a Habblet Etiqueta para uma navegação mais limpa.",
+  "version": "1.1",
+  "author": "Nathan Zera",
   "host_permissions": [
+    "*://habblet.city/hotel*",
     "*://www.habblet.city/hotel/*"
   ],
   "content_scripts": [
     {
       "matches": [
+        "*://habblet.city/hotel*",
         "*://www.habblet.city/hotel/*"
       ],
       "js": [
         "content.js"
       ],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ],
   "icons": {
@@ -23,6 +27,6 @@
     "128": "sharingan_128.png"
   },
   "action": {
-    "default_title": "Auto Close Blet"
+    "default_title": "BletShield"
   }
 }
