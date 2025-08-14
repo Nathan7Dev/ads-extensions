@@ -58,9 +58,6 @@ Logs no console mostram quais anúncios foram fechados:
 ```
 
 O popup de créditos aparece uma vez e pode ser marcado "Não mostrar novamente".
-
-> Recomendo adicionar um GIF mostrando a extensão fechando anúncios em tempo real para melhorar a visualização.
-
 ---
 
 ## 📈 Roadmap
